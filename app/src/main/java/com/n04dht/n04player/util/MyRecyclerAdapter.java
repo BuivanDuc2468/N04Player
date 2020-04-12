@@ -41,12 +41,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Song song = songList.get(position);
+        final Song song = songList.get(position);
         holder.itemsLayoutBinding.setSong(song);
         holder.itemView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, PlayerActivity.class);
+                intent.putExtra("Title", song.getTitle());
+                intent.putExtra("Artist",song.getArtist());
                 context.startActivity(intent);
             }
         });

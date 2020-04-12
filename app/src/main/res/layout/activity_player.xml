@@ -1,22 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <data>
-        <variable
-            name="user"
-            type="com.n04dht.n04player.model.Song" />
-    </data>
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="song"-->
+<!--            type="com.n04dht.n04player.ui.PlayerActivity" />-->
+<!--    </data>-->
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rootView"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
         android:layout_margin="4dp"
-        android:gravity="center_vertical"
-        android:id="@+id/rootView">
-        <TextView
-            android:layout_width="wrap_content"
+        android:background="#5177AE">
+
+        <LinearLayout
+            android:id="@+id/top_menu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World"/>
-    </LinearLayout>
+            android:background="#4357A1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text=""
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"
+                android:id="@+id/title"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="25dp"
+                android:text=""
+                android:id="@+id/artist"
+                android:textColor="#CDCBCB" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_player"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/top_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/default_album_art" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/image_player"
+            android:layout_centerHorizontal="true"
+            android:background="#DFDDDD">
+
+            <Button
+                android:id="@+id/play_repeat"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/repeat" />
+
+            <Button
+                android:id="@+id/play_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/play_repeat"
+                android:background="@drawable/next_back" />
+
+            <Button
+                android:id="@+id/play_pause"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@+id/play_back"
+                android:background="@drawable/pause" />
+
+            <Button
+                android:id="@+id/play_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toRightOf="@id/play_pause"
+                android:background="@drawable/next" />
+
+            <Button
+                android:id="@+id/play_shuffle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:layout_toRightOf="@id/play_next"
+                android:background="@drawable/shuffle" />
+
+        </RelativeLayout>
+    </RelativeLayout>
 </layout>
