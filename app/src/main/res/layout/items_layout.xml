@@ -5,6 +5,9 @@
         <variable
             name="song"
             type="com.n04dht.n04player.model.Song" />
+        <variable
+            name="imageUrl"
+            type="String" />
     </data>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,13 +15,13 @@
         android:orientation="vertical"
         android:layout_margin="4dp"
         android:gravity="center_vertical"
-        android:id="@+id/rootView">
+        android:id="@+id/view_foreground">
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            app:srcCompat="@drawable/default_album_art" />
+            app:profileImage="@{imageUrl}" />
 
         <TextView
             android:id="@+id/text"

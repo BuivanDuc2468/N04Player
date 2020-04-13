@@ -49,70 +49,82 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             app:srcCompat="@drawable/default_album_art" />
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/image_player"
+            android:id="@+id/seekbar"/>
+        <LinearLayout
+            android:id="@+id/timerDisplay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekbar"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5">
 
-        <RelativeLayout
+            <!-- Current Duration Label -->
+            <TextView
+                android:id="@+id/songCurrentDurationLabel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:textColor="#FFFFFF"/>
+
+            <!-- Total Duration Label -->
+            <TextView
+                android:id="@+id/songTotalDurationLabel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/image_player"
+            android:layout_below="@+id/timerDisplay"
             android:layout_centerHorizontal="true"
             android:background="#DFDDDD">
-
-            <Button
+            <ImageView
                 android:id="@+id/play_repeat"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:background="@drawable/repeat" />
-
-            <Button
+                android:src="@drawable/repeat" />
+            <ImageView
                 android:id="@+id/play_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_5"
+                android:src="@android:drawable/ic_media_previous"/>
 
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="20dp"
-                android:layout_toRightOf="@id/play_repeat"
-                android:background="@drawable/next_back" />
-
-            <Button
+            <ImageView
                 android:id="@+id/play_pause"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="20dp"
-                android:layout_toRightOf="@+id/play_back"
-                android:background="@drawable/pause" />
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_5"/>
 
-            <Button
+            <ImageView
                 android:id="@+id/play_next"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:layout_toRightOf="@id/play_pause"
-                android:background="@drawable/next" />
-
-            <Button
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_5"
+                android:src="@android:drawable/ic_media_next"/>
+            <ImageView
                 android:id="@+id/play_shuffle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:layout_toRightOf="@id/play_next"
-                android:background="@drawable/shuffle" />
+                android:src="@drawable/shuffle" />
 
-        </RelativeLayout>
+        </LinearLayout>
     </RelativeLayout>
 </layout>
